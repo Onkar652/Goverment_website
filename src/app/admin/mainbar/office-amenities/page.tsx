@@ -29,7 +29,7 @@ const OfficeAmenitiesPage = () => {
   useEffect(() => {
     const fetchAmenities = async () => {
       try {
-        const res = await fetch('http://localhost:3000/office-amenities');
+        const res = await fetch('https://goverment-website-backend.onrender.com/office-amenities');
         if (!res.ok) throw new Error('Failed to fetch amenities');
         const data: OfficeAmenity[] = await res.json();
         setAmenities(data);
@@ -52,7 +52,7 @@ const OfficeAmenitiesPage = () => {
     e.preventDefault();
     setSubmitting(true); // ✅ Show spinner
     try {
-      const res = await fetch('http://localhost:3000/office-amenities', {
+      const res = await fetch('https://goverment-website-backend.onrender.com/office-amenities', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -77,7 +77,7 @@ const OfficeAmenitiesPage = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      const res = await fetch(`http://localhost:3000/office-amenities/${id}`, {
+      const res = await fetch(`https://goverment-website-backend.onrender.com/office-amenities/${id}`, {
         method: 'DELETE',
       });
       if (!res.ok) throw new Error('Failed to delete amenity');

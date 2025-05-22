@@ -26,7 +26,7 @@ const SurveyPage = () => {
   useEffect(() => {
     const fetchSurveys = async () => {
       try {
-        const res = await fetch('http://localhost:3000/survey');
+        const res = await fetch('https://goverment-website-backend.onrender.com/survey');
         if (!res.ok) throw new Error('Failed to fetch survey data');
         const data: Survey[] = await res.json();
 
@@ -50,7 +50,7 @@ const SurveyPage = () => {
     if (!confirm('Are you sure you want to delete this survey?')) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/survey/${id}`, {
+      const res = await fetch(`https://goverment-website-backend.onrender.com/survey/${id}`, {
         method: 'DELETE',
       });
       if (!res.ok) throw new Error('Failed to delete survey');
@@ -76,7 +76,7 @@ const SurveyPage = () => {
         formData.append('image', formFile);
       }
 
-      const res = await fetch('http://localhost:3000/survey', {
+      const res = await fetch('https://goverment-website-backend.onrender.com/survey', {
         method: 'POST',
         body: formData,
       });

@@ -11,7 +11,7 @@ export default function EaseOfLiving() {
 
   useEffect(() => {
     const fetchFiles = async () => {
-      const res = await fetch('http://localhost:3000/files');
+      const res = await fetch('https://goverment-website-backend.onrender.com/files');
       const data = await res.json();
       setFiles(data);
     };
@@ -41,7 +41,7 @@ export default function EaseOfLiving() {
 
     setIsUploading(true);
 
-    const res = await fetch('http://localhost:3000/files', {
+    const res = await fetch('https://goverment-website-backend.onrender.com/files', {
       method: 'POST',
       body: formData,
     });
@@ -60,7 +60,7 @@ export default function EaseOfLiving() {
   };
 
   const handleDelete = async (id: number) => {
-    const res = await fetch(`http://localhost:3000/files/${id}`, {
+    const res = await fetch(`https://goverment-website-backend.onrender.com/files/${id}`, {
       method: 'DELETE',
     });
 

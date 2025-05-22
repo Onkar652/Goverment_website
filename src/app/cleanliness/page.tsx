@@ -19,7 +19,7 @@ const CleanlinessPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch('http://localhost:3000/cleanliness');
+        const res = await fetch('https://goverment-website-backend.onrender.com/cleanliness');
         if (!res.ok) throw new Error('Failed to fetch cleanliness data');
         const data = await res.json();
         setCleanlinessData([...data].reverse());

@@ -32,7 +32,7 @@ export default function Page() {
 
   const fetchData = async () => {
     try {
-      const res = await fetch('http://localhost:3000/cleanliness');
+      const res = await fetch('https://goverment-website-backend.onrender.com/cleanliness');
       if (!res.ok) throw new Error('Failed to fetch cleanliness data');
       const json = await res.json();
       setData(json.reverse());
@@ -46,7 +46,7 @@ export default function Page() {
 
   const handleDelete = async (id: number) => {
     try {
-      const res = await fetch(`http://localhost:3000/cleanliness/${id}`, {
+      const res = await fetch(`https://goverment-website-backend.onrender.com/cleanliness/${id}`, {
         method: 'DELETE',
       });
       if (!res.ok) throw new Error('Delete failed');
@@ -89,7 +89,7 @@ export default function Page() {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/cleanliness', {
+      const res = await fetch('https://goverment-website-backend.onrender.com/cleanliness', {
         method: 'POST',
         body: formDataToSend,
       });

@@ -33,7 +33,7 @@ const ComplaintForm = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:3000/complaints', {
+      const res = await fetch('https://goverment-website-backend.onrender.com/complaints', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...formData }),

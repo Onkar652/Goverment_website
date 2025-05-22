@@ -12,7 +12,7 @@ const AdminDashboard = () => {
     if (!token) {
       router.push('/admin/login');
     } else {
-      fetch('http://localhost:3000/admin/dashboard', {
+      fetch('https://goverment-website-backend.onrender.com/admin/dashboard', {
         headers: {
           Authorization: `Bearer ${token}`,
         },

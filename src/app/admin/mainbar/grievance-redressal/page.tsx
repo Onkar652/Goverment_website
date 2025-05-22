@@ -33,7 +33,7 @@ const ComplaintPage = () => {
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
-        const res = await fetch('http://localhost:3000/complaints');
+        const res = await fetch('https://goverment-website-backend.onrender.com/complaints');
         if (!res.ok) throw new Error('Failed to fetch complaints data');
         const data: Complaint[] = await res.json();
 
@@ -61,7 +61,7 @@ const ComplaintPage = () => {
     const confirmed = confirm('Are you sure you want to delete this complaint?');
     if (!confirmed) return;
     try {
-      const res = await fetch(`http://localhost:3000/complaints/${id}`, {
+      const res = await fetch(`https://goverment-website-backend.onrender.com/complaints/${id}`, {
         method: 'DELETE',
       });
       if (!res.ok) throw new Error('Failed to delete complaint');

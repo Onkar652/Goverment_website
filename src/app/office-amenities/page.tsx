@@ -17,7 +17,7 @@ const OfficeAmenitiesPage = () => {
   useEffect(() => {
     const fetchAmenities = async () => {
       try {
-        const res = await fetch('http://localhost:3000/office-amenities');
+        const res = await fetch('https://goverment-website-backend.onrender.com/office-amenities');
         if (!res.ok) throw new Error('Failed to fetch amenities');
         const data = await res.json();
         setAmenities(data);

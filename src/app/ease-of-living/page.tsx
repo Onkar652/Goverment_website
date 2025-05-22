@@ -16,7 +16,7 @@ const FileDetail = () => {
   const router = useRouter();
 
   useEffect(() => {
-    fetch('http://localhost:3000/files')
+    fetch('https://goverment-website-backend.onrender.com/files')
       .then(res => res.json())
       .then(data => setFiles(data.reverse()))
       .catch(err => console.error('Error fetching files:', err));
@@ -24,7 +24,7 @@ const FileDetail = () => {
 
   const handleDownload = (file: FileData) => {
     const link = document.createElement('a');
-    link.href = `http://localhost:3000/uploads/${file.file_path}`;
+    link.href = `https://goverment-website-backend.onrender.com/uploads/${file.file_path}`;
     link.download = file.name;
     document.body.appendChild(link);
     link.click();

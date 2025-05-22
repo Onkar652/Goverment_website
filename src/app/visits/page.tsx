@@ -18,7 +18,7 @@ const Survey = () => {
   useEffect(() => {
     const fetchSurveyData = async () => {
       try {
-        const res = await fetch('http://localhost:3000/survey');
+        const res = await fetch('https://goverment-website-backend.onrender.com/survey');
         if (!res.ok) throw new Error('Failed to fetch data');
         const data = await res.json();
         setSurveyData(data);
