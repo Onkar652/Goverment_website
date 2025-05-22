@@ -24,7 +24,7 @@ const FileDetail = () => {
 
   const handleDownload = (file: FileData) => {
     const link = document.createElement('a');
-    link.href = `https://goverment-website-backend.onrender.com/files${file.file_path}`;
+    link.href = `https://goverment-website-backend.onrender.com${file.file_path}`;
     link.download = file.name;
     document.body.appendChild(link);
     link.click();
