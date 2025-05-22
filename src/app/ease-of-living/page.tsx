@@ -9,6 +9,7 @@ interface FileData {
   name: string;
   description: string;
   file_path: string;
+  filepublic_url: string; 
 }
 
 const FileDetail = () => {
@@ -22,14 +23,15 @@ const FileDetail = () => {
       .catch(err => console.error('Error fetching files:', err));
   }, []);
 
-  const handleDownload = (file: FileData) => {
-    const link = document.createElement('a');
-    link.href = `https://goverment-website-backend.onrender.com${file.file_path}`;
-    link.download = file.name;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+const handleDownload = (file: FileData) => {
+  const link = document.createElement('a');
+  link.href = file.filepublic_url; // ✅ Use the public URL for Firebase Storage
+  link.download = file.name;       // You can keep this to suggest a filename
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
   if (files.length === 0) return <p>Loading...</p>;
 
