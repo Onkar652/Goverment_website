@@ -1,3 +1,7 @@
+body{
+  background-color: white;
+  color: black;
+}
 .investment-promotion-container {
   margin: 0 auto;
   padding: 20px;

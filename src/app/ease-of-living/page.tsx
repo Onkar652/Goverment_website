@@ -24,7 +24,7 @@ const FileDetail = () => {
 
   const handleDownload = (file: FileData) => {
     const link = document.createElement('a');
-    link.href = `https://goverment-website-backend.onrender.com/uploads/${file.file_path}`;
+    link.href = `https://goverment-website-backend.onrender.com/files${file.file_path}`;
     link.download = file.name;
     document.body.appendChild(link);
     link.click();
@@ -34,12 +34,10 @@ const FileDetail = () => {
   if (files.length === 0) return <p>Loading...</p>;
 
   return (
-  
     <div className="gov-container">
-
-<div className="logo-wrapper">
-    <img src="/logo.jpg" alt="Government Logo" className="gov-logo" />
-  </div>
+      <div className="logo-wrapper">
+        <img src="/logo.jpg" alt="Government Logo" className="gov-logo" />
+      </div>
       <h1>Scheme Documents</h1>
       <div className="table-box">
         <table className="gov-table">

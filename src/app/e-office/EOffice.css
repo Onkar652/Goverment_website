@@ -1,4 +1,8 @@
 /* Overall container for the E-Office page */
+body{
+  background-color: white;
+  color: black;
+}
 .e-office-container {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
