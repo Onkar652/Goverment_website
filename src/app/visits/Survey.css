@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: rgb(250, 248, 248);
+  color: #222;
+  overflow-x: hidden;
+}
+
+.survey-container {
+  padding: 20px;
+}
+
+.survey-list {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.title-wrapper {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #004a99;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #004a99;
+  padding-bottom: 10px;
+}
+
+.title-wrapper h2 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+.survey-item-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Desktop: Alternate layout */
+@media (min-width: 769px) {
+  .odd-item .image-wrapper {
+    order: 1;
+  }
+  .odd-item .info-wrapper {
+    order: 2;
+  }
+  .even-item .image-wrapper {
+    order: 2;
+  }
+  .even-item .info-wrapper {
+    order: 1;
+  }
+}
+
+.image-wrapper {
+  flex: 0 0 60%;
+  padding: 10px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.info-wrapper {
+  flex: 0 0 40%;
+  padding: 10px;
+}
+
+.info-wrapper p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #222;
+}
+
+.info-wrapper strong {
+  font-weight: bold;
+  color: #004a99;
+}
+
+.survery-back-btn {
+  background-color: #004a99;
+  color: #fff;
+  border: none;
+  height: 40px;
+  padding: 10px 18px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 20px auto;
+  display: block;
+  width: 100%;
+  max-width: 300px;
+}
+
+.loading,
+.error,
+.no-data {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #004a99;
+  margin: 40px 0;
+  font-weight: 600;
+}
+
+/* ✅ Mobile: Reset layout to image -> info always */
+@media (max-width: 768px) {
+  .survey-item-wrapper {
+    flex-direction: column !important;
+  }
+
+  .survey-item-wrapper .image-wrapper,
+  .survey-item-wrapper .info-wrapper {
+    order: 0 !important;
+    flex: 0 0 100% !important;
+    padding: 10px !important;
+  }
+
+  .survey-item-wrapper .info-wrapper {
+    text-align: center;
+  }
+
+  .survey-item-wrapper .image-wrapper img {
+    max-width: 90%;
+    margin: 0 auto;
+    display: block;
+  }
+}

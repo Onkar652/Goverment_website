@@ -1,0 +1,123 @@
+.amenities-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.page-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.amenity-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-left: 5px solid #2c7a7b;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.amenity-card p {
+  margin: 6px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.loading-text,
+.error-text {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+.back-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #2c7a7b;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #245f61;
+}
+
+/* Responsive Design */
+
+/* Tablets and smaller desktops */
+@media (max-width: 768px) {
+  .amenities-container {
+    max-width: 90%;
+    padding: 16px;
+    margin: 20px auto;
+  }
+
+  .page-title {
+    font-size: 1.75em;
+    margin-bottom: 16px;
+  }
+
+  .amenity-card {
+    padding: 14px;
+  }
+
+  .amenity-card p {
+    font-size: 15px;
+  }
+
+  .loading-text,
+  .error-text {
+    font-size: 16px;
+  }
+
+  .back-button {
+    padding: 10px 18px;
+    font-size: 15px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .amenities-container {
+    max-width: 95%;
+    padding: 12px;
+    margin: 15px auto;
+  }
+
+  .page-title {
+    font-size: 1.5em;
+  }
+
+  .amenity-card {
+    padding: 12px;
+  }
+
+  .amenity-card p {
+    font-size: 14px;
+  }
+
+  .loading-text,
+  .error-text {
+    font-size: 14px;
+  }
+
+  .back-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}

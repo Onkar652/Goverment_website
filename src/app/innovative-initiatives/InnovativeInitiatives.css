@@ -1,0 +1,77 @@
+/* Base container for the page */
+.innovative-initiatives-container {
+    font-family: Arial, sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+    margin-top: 30px;
+    background-color: white;
+    color: black;
+  }
+  
+  /* Title of the page */
+  .page-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Content container */
+  .innovative-initiatives-content {
+    margin-top: 30px;
+    line-height: 1.6;
+  }
+  
+  /* Section Titles */
+  .section-title {
+    font-size: 1.8em;
+    color: #16a085;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  /* Back Button */
+  .back-btn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  .back-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Paragraph Styling */
+  .innovative-initiatives-content p {
+    font-size: 1.1em;
+    color: #34495e;
+    margin-bottom: 15px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .page-title {
+      font-size: 2em;
+    }
+  
+    .section-title {
+      font-size: 1.5em;
+    }
+  
+    .back-btn {
+      font-size: 1em;
+    }
+  }
+  

@@ -1,0 +1,114 @@
+body {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.survey-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  color: black;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.survey-item {
+  border: 1px solid #ddd;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  background-color: #fff;
+  position: relative;
+}
+
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: darkred;
+}
+
+.survey-form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.survey-form input,
+.survey-form textarea {
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.survey-form button {
+  padding: 10px;
+  background-color: #0066cc;
+  width: 100%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.survey-form button:hover {
+  background-color: #004c99;
+}
+
+/* Responsive styles */
+@media (max-width: 640px) {
+  .survey-container {
+    margin: 10px;
+    padding: 12px;
+  }
+
+  .survey-item {
+    padding: 10px;
+  }
+
+  .survey-form input,
+  .survey-form textarea {
+    font-size: 14px;
+  }
+
+  .survey-form button {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .survey-form button {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .delete-btn {
+    padding: 5px 8px;
+    font-size: 13px;
+  }
+}

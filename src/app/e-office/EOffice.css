@@ -1,0 +1,114 @@
+/* Overall container for the E-Office page */
+.e-office-container {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px; /* Limit max width for large screens */
+}
+
+/* Title of the page */
+.page-title {
+  font-size: 2.5rem;
+  color: #2e3b4e;
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 10px; /* Prevent text touching edges on small screens */
+}
+
+/* Section titles */
+.section-title {
+  font-size: 1.8rem;
+  color: #3c4e6d;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding: 0 10px;
+}
+
+/* Styling for paragraphs and general text */
+.e-office-content p {
+  font-size: 1rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+  padding: 0 10px;
+}
+
+/* Styling for the list items */
+.e-office-content ul {
+  list-style-type: square;
+  margin-left: 20px;
+  color: #4a4a4a;
+  padding: 0 10px 10px 40px; /* add left padding to align with margin-left */
+}
+
+.e-office-content ul li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+
+/* Back button styling */
+.back-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 40px auto 0 auto;
+  text-align: center;
+  width: 150px;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .e-office-container {
+    margin: 10px 15px;
+    padding: 15px 10px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    padding: 0 5px;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    padding: 0 5px;
+  }
+
+  .e-office-content p,
+  .e-office-content ul {
+    padding: 0 5px;
+  }
+
+  .back-btn {
+    width: 100%;
+    font-size: 1rem;
+    margin: 20px auto 0 auto;
+  }
+}
+
+/* Extra small screens (phones) */
+@media (max-width: 480px) {
+  .page-title {
+    font-size: 1.6rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
+
+  .back-btn {
+    font-size: 0.9rem;
+    padding: 10px 15px;
+  }
+}

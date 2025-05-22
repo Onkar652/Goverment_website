@@ -1,0 +1,158 @@
+body {
+  background-color: #ecf0f1;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.gov-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7fa;
+  border-radius: 10px;
+  color: #333;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gov-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.gov-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  table-layout: auto;
+  overflow-x: auto; /* allow horizontal scroll on small screens */
+  display: block; /* enable scrolling */
+}
+
+.gov-table th,
+.gov-table td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: left;
+  vertical-align: top;
+  white-space: nowrap; /* prevent text wrapping inside cells */
+}
+
+.gov-table th {
+  background-color: #2980b9;
+  color: #fff;
+  font-size: 16px;
+}
+
+.gov-table td {
+  background-color: #f9f9f9;
+}
+
+.gov-table td button {
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.gov-table td button:hover {
+  background-color: #2ecc71;
+}
+
+.back-button {
+  margin-top: 30px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  max-width: 200px;
+  text-align: center;
+}
+
+.back-button:hover {
+  background-color: #2980b9;
+}
+
+.logo-wrapper {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gov-logo {
+  height: 150px;
+  object-fit: contain;
+}
+
+/* Responsive Design */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  .gov-container {
+    margin: 20px 10px;
+    padding: 15px 10px;
+  }
+
+  .gov-table th,
+  .gov-table td {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+
+  .gov-table td button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .back-button {
+    padding: 8px 16px;
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .gov-container {
+    margin: 10px 5px;
+    padding: 10px 5px;
+  }
+
+  .gov-table {
+    font-size: 13px;
+  }
+
+  .gov-table th,
+  .gov-table td {
+    padding: 8px 6px;
+    white-space: normal; /* allow wrapping on very small screens */
+  }
+
+  .gov-table td button {
+    padding: 5px 10px;
+    font-size: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .back-button {
+    font-size: 13px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .gov-logo {
+    height: 100px; /* smaller logo on phones */
+  }
+}

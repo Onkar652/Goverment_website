@@ -1,0 +1,98 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-right: 2px solid #ccc;
+  overflow-y: auto;
+  color: black;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.sidebar-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-list li {
+  margin-bottom: 12px;
+}
+
+.sidebar-list li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-list li a:hover {
+  background-color: #0070f3;
+  color: #fff;
+}
+
+/* Tablet and below */
+@media (max-width: 768px) {
+  /* Hover effect for larger screens */
+.sidebar-list li a:hover {
+  background-color: #0070f3;
+  color: #fff;
+}
+
+/* Active state for touch devices */
+.sidebar-list li a:active {
+  background-color: #0070f3;
+  color: #fff;
+}
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar off-screen */
+  }
+
+  .sidebar.open {
+    transform: translateX(0); /* Show when toggled */
+  }
+}
+
+/* Optional: Hamburger icon styling */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: black;
+}
+
+@media (max-width: 768px) {
+  /* Hover effect for larger screens */
+.sidebar-list li a:hover {
+  background-color: #0070f3;
+  color: #fff;
+}
+
+/* Active state for touch devices */
+.sidebar-list li a:active {
+  background-color: #0070f3;
+  color: #fff;
+}
+  .hamburger {
+    display: block;
+  }
+}
+

@@ -1,0 +1,166 @@
+/* OfficePage.css */
+
+/* Base Styles */
+.office-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: black;
+}
+
+.office-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.office-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.office-form input,
+.office-form textarea {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.office-form button {
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.office-form button:hover {
+  background-color: #0056b3;
+}
+
+.amenity-list {
+  list-style: none;
+  padding: 0;
+}
+
+.amenity-item {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.delete-button {
+  margin-top: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-left: 20px;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+
+.office-form button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  position: relative;
+}
+
+.office-form button[disabled]::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  transform: translateY(-50%);
+}
+
+@keyframes spin {
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+/* Responsive Styles */
+
+/* Tablet (<=768px) */
+@media (max-width: 768px) {
+  .office-container {
+    padding: 15px;
+  }
+
+  .office-container h1 {
+    font-size: 1.75rem;
+  }
+
+  .office-form input,
+  .office-form textarea {
+    font-size: 15px;
+    padding: 9px;
+  }
+
+  .office-form button {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .delete-button {
+    font-size: 13px;
+    padding: 7px 14px;
+  }
+}
+
+/* Mobile (<=480px) */
+@media (max-width: 480px) {
+  .office-container {
+    padding: 10px;
+  }
+
+  .office-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .office-form input,
+  .office-form textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .office-form button {
+    font-size: 14px;
+    padding: 9px;
+    border-radius: 20px;
+  }
+
+  .amenity-item {
+    padding: 12px;
+  }
+
+  .delete-button {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

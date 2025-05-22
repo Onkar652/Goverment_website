@@ -1,0 +1,164 @@
+/* General layout */
+.ease-of-living-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+  padding: 20px;
+  box-sizing: border-box;
+  color: black;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.intro-text {
+  font-size: 1.125rem;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Form styles */
+.form-container {
+  width: 100%;
+  max-width: 400px;
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: white;
+  color: black;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Files list styles */
+.files-list {
+  margin-top: 32px;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+}
+
+.uploaded-files-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.file-item {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  background-color: white;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* spiener */
+
+/* Spinner Styles */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid white;
+  border-top: 3px solid #007bff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+@media (min-width: 600px) {
+  .file-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.file-name {
+  font-weight: 600;
+}
+
+.file-description {
+  font-size: 0.875rem;
+  color: #777;
+}
+
+.file-details {
+  font-size: 0.875rem;
+  color: #555;
+  margin-top: 4px;
+}
+
+.delete-btn {
+  color: #e74c3c;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+  align-self: flex-start;
+  margin-top: 12px;
+}
+
+@media (min-width: 600px) {
+  .delete-btn {
+    margin-top: 0;
+    align-self: center;
+  }
+}
+
+.delete-btn:hover {
+  color: #c0392b;
+}
