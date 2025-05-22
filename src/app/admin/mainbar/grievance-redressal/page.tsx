@@ -8,7 +8,7 @@ interface Complaint {
   name: string;
   problem: string;
   createdAt: Date;
-  completed?: boolean; // optional, but will be set locally
+  completed?: boolean;
 }
 
 const LOCAL_STORAGE_KEY = 'completedComplaints';
@@ -18,16 +18,28 @@ const ComplaintPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string>('');
 
-  // Load completed complaint IDs from localStorage
+  // Load completed complaint IDs from localStorage safely
   const getCompletedFromLocalStorage = (): string[] => {
-    if (typeof window === 'undefined') return [];
-    const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
-    return stored ? JSON.parse(stored) : [];
+    if (typeof window !== 'undefined') {
+      try {
+        const stored = localStorage.getItem(LOCAL_STORAGE_KEY);
+        return stored ? JSON.parse(stored) : [];
+      } catch {
+        return [];
+      }
+    }
+    return [];
   };
 
-  // Save completed complaint IDs to localStorage
+  // Save completed complaint IDs to localStorage safely
   const saveCompletedToLocalStorage = (completedIds: string[]) => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(completedIds));
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(completedIds));
+      } catch {
+        // silently ignore
+      }
+    }
   };
 
   useEffect(() => {
@@ -37,10 +49,8 @@ const ComplaintPage = () => {
         if (!res.ok) throw new Error('Failed to fetch complaints data');
         const data: Complaint[] = await res.json();
 
-        // Get completed complaint IDs from localStorage
         const completedIds = getCompletedFromLocalStorage();
 
-        // Map completed status locally
         const updatedData = data.map(c => ({
           ...c,
           completed: completedIds.includes(c.id),
@@ -60,6 +70,7 @@ const ComplaintPage = () => {
   const handleDelete = async (id: string) => {
     const confirmed = confirm('Are you sure you want to delete this complaint?');
     if (!confirmed) return;
+
     try {
       const res = await fetch(`https://goverment-website-backend.onrender.com/complaints/${id}`, {
         method: 'DELETE',
@@ -68,22 +79,18 @@ const ComplaintPage = () => {
 
       setComplaints(prev => prev.filter(c => c.id !== id));
 
-      // Also remove from localStorage if it was marked completed
-      const completedIds = getCompletedFromLocalStorage().filter(cid => cid !== id);
-      saveCompletedToLocalStorage(completedIds);
-
+      const updatedCompleted = getCompletedFromLocalStorage().filter(cid => cid !== id);
+      saveCompletedToLocalStorage(updatedCompleted);
     } catch (err) {
       alert(err instanceof Error ? err.message : 'Unknown error');
     }
   };
 
   const handleComplete = (id: string) => {
-    // Update state immediately
     setComplaints(prev =>
       prev.map(c => (c.id === id ? { ...c, completed: true } : c))
     );
 
-    // Update localStorage
     const completedIds = getCompletedFromLocalStorage();
     if (!completedIds.includes(id)) {
       completedIds.push(id);

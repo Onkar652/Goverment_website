@@ -5,13 +5,21 @@ import { useRouter } from 'next/navigation';
 
 const AdminDashboard = () => {
   const [data, setData] = useState<any>(null);
+  const [token, setToken] = useState<string | null>(null);
   const router = useRouter();
-  const token = localStorage.getItem('token');
 
   useEffect(() => {
-    if (!token) {
+    // Access localStorage only in useEffect (client-side)
+    const storedToken = localStorage.getItem('token');
+    if (!storedToken) {
       router.push('/admin/login');
     } else {
+      setToken(storedToken);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (token) {
       fetch('https://goverment-website-backend.onrender.com/admin/dashboard', {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -28,7 +36,7 @@ const AdminDashboard = () => {
   return (
     <div>
       <h1>Admin Dashboard</h1>
-      <p>{data.message}</p> 
+      <p>{data.message}</p>
     </div>
   );
 };

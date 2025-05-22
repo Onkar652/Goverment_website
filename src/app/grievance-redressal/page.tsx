@@ -14,13 +14,17 @@ const ComplaintForm = () => {
   const [justSubmitted, setJustSubmitted] = useState(false);
 
   useEffect(() => {
-    const savedId = localStorage.getItem('complaint_id');
-    if (savedId) {
-      setSubmittedId(savedId);
+    if (typeof window !== 'undefined') {
+      const savedId = localStorage.getItem('complaint_id');
+      if (savedId) {
+        setSubmittedId(savedId);
+      }
     }
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -42,8 +46,12 @@ const ComplaintForm = () => {
       if (!res.ok) throw new Error('Submission failed');
 
       const result = await res.json();
+
       if (result.id) {
-        localStorage.setItem('complaint_id', result.id);
+        if (typeof window !== 'undefined') {
+          localStorage.setItem('complaint_id', result.id);
+        }
+
         setSubmittedId(result.id);
         setMessage('Complaint submitted successfully!');
         setJustSubmitted(true);
@@ -56,7 +64,10 @@ const ComplaintForm = () => {
   };
 
   const handleNewComplaint = () => {
-    localStorage.removeItem('complaint_id');
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('complaint_id');
+    }
+
     setSubmittedId(null);
     setMessage('');
     setJustSubmitted(false);
